@@ -1,0 +1,12 @@
+# Environnement virtuel
+.venv/
+
+# Vecteurs mis en cache, regenerables par le notebook
+data/cache/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
