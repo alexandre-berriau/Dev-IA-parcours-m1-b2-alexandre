@@ -1,7 +1,5 @@
 # Escale Atlantique — Classifieur de motifs d'insatisfaction
 
-
-
 ## Le contexte
 
 Le service qualité veut connaître le **motif** de chaque avis négatif. L'équipe data a fait étiqueter un historique d'avis par un grand modèle de langue (LLM), une fois. Ce modèle est trop lent et trop lourd pour tourner sur chaque nouvel avis : il faut un petit classifieur, entraîné sur ces étiquettes.
@@ -15,9 +13,20 @@ data/
   cache/              # tes vecteurs sauvegardés (non versionné)
 models/               # le modèle de motifs que tu retiens (à versionner)
 notebooks/
-  01_motifs.ipynb     # point de départ
+  01_motifs_guide.ipynb     # le notebook guidé : tout le brief se fait ici
 requirements.txt
 ```
+
+## Le notebook guidé
+
+Le notebook suit les 6 étapes du brief. Exécute les cellules dans l'ordre :
+
+- les cellules de code **sans `___`** sont fournies : lis-les, elles font partie de l'apprentissage ;
+- les **`___`** sont à compléter (14 au total) ;
+- après chaque étape, un bloc **✅** donne le résultat attendu, à quelques centièmes près : s'il est très différent du tien, relis l'étape avant d'avancer ;
+- les cellules **✏️** sont à rédiger : ton avis sur les étiquettes, le commentaire des courbes, la comparaison, l'analyse des erreurs et la synthèse finale. Elles comptent autant que le code.
+
+Les mini-cours 11 (embeddings) et 12 (Keras) accompagnent les étapes 4 et 5.
 
 ## Installation
 
@@ -58,6 +67,8 @@ Au premier lancement, le modèle d'embeddings (environ 470 Mo) est téléchargé
 | `motif` | le motif **principal** de l'insatisfaction |
 
 ## Les motifs
+
+Consigne donnée au LLM, et à l'équipe qualité pour `avis_recents.csv` : un seul motif par avis, celui qui pèse le plus dans l'insatisfaction.
 
 | Motif | Couvre |
 |---|---|
